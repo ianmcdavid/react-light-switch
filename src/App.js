@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+import Switch from "./Switch";
 
 class App extends Component {
-  state = { on: true };
-
+  state = { on: false };
   toggle = () => {
     const isOn = this.state.on;
     this.setState({ on: !isOn });
@@ -14,13 +14,8 @@ class App extends Component {
     }
     return (
       <div className={wallClass}>
-        <div className="switch-plate">
-          <div className="screw" />
-          <div className="switch" onClick={this.toggle}>
-            <div className="switch-handle" />
-          </div>
-          <div className="screw" />
-        </div>
+        <Switch toggle={this.toggle} />
+        <Switch toggle={this.toggle} />
       </div>
     );
   }
